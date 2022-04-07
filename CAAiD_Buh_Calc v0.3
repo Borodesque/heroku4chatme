@@ -1,0 +1,496 @@
+import time
+time.sleep(1)
+print ('Welcome to CAAiD Buhlo_Debet Calculator', end='\n')
+print('\n')
+time.sleep(1)
+print('Определяем состав компании: ', end='\n')
+
+BAnd = input('Андрюха в составе? (y/n): ')
+GDim = input('Диман в составе? (y/n): ')
+IRom = input('Роман Анатольевич в составе? (y/n): ')
+PTol = input('Толян в составе? (y/n): ')
+SAle = input('Санёк в составе? (y/n): ')
+VRom = input('Роман Эдуардович в составе? (y/n): ')
+
+print(' ')
+print('Определимся с закупом: ')
+time.sleep(0.5)
+buhal = input('Пили? (y/n): ')
+el = input('Проточку заказывали? (y/n): ')
+if buhal == 'n' and el == 'n':
+    print('А нахуя тогда вам бот?')
+    time.sleep(1)
+    exit()
+print(' ')
+time.sleep(0.5)
+
+characters_count = 0
+pivas_drinkers_count = 0
+hard_drinkers_count = 0
+loh_count = 0
+eaters_count = 0
+
+li_pivas_drinkers = []
+li_hard_drinkers = []
+li_lohs = []
+li_eaters = []
+
+
+
+if BAnd == 'y':
+    BAnd_drink = input('Что пил Андрюха? (pivas/hard/all/loh): ')
+    if BAnd_drink == 'pivas':
+        li_pivas_drinkers.append("Андрюха")
+        pivas_drinkers_count += 1
+    elif BAnd_drink == 'hard':
+        li_hard_drinkers.append("Андрюха")
+        hard_drinkers_count += 1
+    elif BAnd_drink == 'all':
+        li_pivas_drinkers.append("Андрюха")
+        li_hard_drinkers.append("Андрюха")
+        pivas_drinkers_count += 1
+        hard_drinkers_count += 1
+    elif BAnd_drink == 'loh':
+        li_lohs.append("Андрюха")
+        loh_count += 1
+
+    if el == 'y':
+        BAnd_eat = input('Андрюха кушал? (y/n): ')
+        if BAnd_eat == 'y':
+            li_eaters.append("Андрюха")
+            eaters_count += 1
+    else:
+        BAnd_eat = 'n'
+
+    BAnd_pivas_invest = int(input('Сколько Андрюха вкинул на пивас?: '))
+    BAnd_hard_invest = int(input('Сколько Андрюха вкинул на крепкий алкоголь?: '))
+    # BAnd_eat_invest = int(input('Сколько Андрюха вкинул на еду?: '))
+    # BAnd_total_invest = BAnd_eat_invest + BAnd_hard_invest + BAnd_pivas_invest
+    characters_count += 1
+else:
+    BAnd_eat = 'n'
+    BAnd_pivas_invest = 0
+    BAnd_hard_invest = 0
+    BAnd_eat_invest = 0
+
+print(' ')
+
+if GDim == 'y':
+    GDim_drink = input('Что пил Диман? (pivas/hard/all/loh): ')
+    if GDim_drink == 'pivas':
+        li_pivas_drinkers.append("Диман")
+        pivas_drinkers_count += 1
+    elif GDim_drink == 'hard':
+        li_hard_drinkers.append("Диман")
+        hard_drinkers_count += 1
+    elif GDim_drink == 'all':
+        li_pivas_drinkers.append("Диман")
+        li_hard_drinkers.append("Диман")
+        pivas_drinkers_count += 1
+        hard_drinkers_count += 1
+    elif GDim_drink == 'loh':
+        li_lohs.append("Диман")
+        loh_count += 1
+
+    if el == 'y':
+        GDim_eat = input('Диман кушал? (y/n): ')
+        if GDim_eat == 'y':
+            li_eaters.append("Диман")
+            eaters_count += 1
+    else:
+        GDim_eat = 'n'
+
+    GDim_pivas_invest = int(input('Сколько Диман вкинул на пивас?: '))
+    GDim_hard_invest = int(input('Сколько Диман вкинул на крепкий алкоголь?: '))
+    # GDim_eat_invest = int(input('Сколько Диман вкинул на еду?: '))
+    # GDim_total_invest = GDim_eat_invest + GDim_hard_invest + GDim_pivas_invest
+    characters_count += 1
+else:
+    GDim_eat = 'n'
+    GDim_pivas_invest = 0
+    GDim_hard_invest = 0
+    GDim_eat_invest = 0
+
+print(' ')
+
+if IRom == 'y':
+    IRom_drink = input('Что пил Роман Анатольевич? (pivas/hard/all/loh): ')
+    if IRom_drink == 'pivas':
+        li_pivas_drinkers.append("Роман Анатольевич")
+        pivas_drinkers_count += 1
+    elif IRom_drink == 'hard':
+        li_hard_drinkers.append("Роман Анатольевич")
+        hard_drinkers_count += 1
+    elif IRom_drink == 'all':
+        li_pivas_drinkers.append("Роман Анатольевич")
+        li_hard_drinkers.append("Роман Анатольевич")
+        pivas_drinkers_count += 1
+        hard_drinkers_count += 1
+    elif IRom_drink == 'loh':
+        li_lohs.append("Роман Анатольевич")
+        loh_count += 1
+
+    if el == 'y':
+        IRom_eat = input('Роман Анатольевич кушал? (y/n): ')
+        if IRom_eat == 'y':
+            li_eaters.append("Роман Анатольевич")
+            eaters_count += 1
+    else:
+        IRom_eat = 'n'
+
+    IRom_pivas_invest = int(input('Сколько Роман Анатольевич вкинул на пивас?: '))
+    IRom_hard_invest = int(input('Сколько Роман Анатольевич вкинул на крепкий алкоголь?: '))
+    # IRom_eat_invest = int(input('Сколько Роман Анатольевич вкинул на еду?: '))
+    # IRom_total_invest = IRom_eat_invest + IRom_hard_invest + IRom_pivas_invest
+    characters_count += 1
+
+else:
+    IRom_eat = 'n'
+    IRom_pivas_invest = 0
+    IRom_hard_invest = 0
+    IRom_eat_invest = 0
+
+print(' ')
+
+if PTol == 'y':
+    PTol_drink = input('Что пил Толян? (pivas/hard/all/loh): ')
+    if PTol_drink == 'pivas':
+        li_pivas_drinkers.append("Толян")
+        pivas_drinkers_count += 1
+    elif PTol_drink == 'hard':
+        li_hard_drinkers.append("Толян")
+        hard_drinkers_count += 1
+    elif PTol_drink == 'all':
+        li_pivas_drinkers.append("Толян")
+        li_hard_drinkers.append("Толян")
+        pivas_drinkers_count += 1
+        hard_drinkers_count += 1
+    elif PTol_drink == 'loh':
+        li_lohs.append("Толян")
+        loh_count += 1
+
+    if el == 'y':
+        PTol_eat = input('Толян кушал? (y/n): ')
+        if PTol_eat == 'y':
+            li_eaters.append("Толян")
+            eaters_count += 1
+    else:
+        PTol_eat = 'n'
+
+    PTol_pivas_invest = int(input('Сколько Толян вкинул на пивас?: '))
+    PTol_hard_invest = int(input('Сколько Толян вкинул на крепкий алкоголь?: '))
+    # PTol_eat_invest = int(input('Сколько Толян вкинул на еду?: '))
+    # PTol_total_invest = PTol_eat_invest + PTol_hard_invest + PTol_pivas_invest
+    characters_count += 1
+
+else:
+    PTol_eat = 'n'
+    PTol_pivas_invest = 0
+    PTol_hard_invest = 0
+    PTol_eat_invest = 0
+
+print(' ')
+
+if SAle == 'y':
+    SAle_drink = input('Что пил Санёк? (pivas/hard/all/loh): ')
+    if SAle_drink == 'pivas':
+        li_pivas_drinkers.append("Санёк")
+        pivas_drinkers_count += 1
+    elif SAle_drink == 'hard':
+        li_hard_drinkers.append("Санёк")
+        hard_drinkers_count += 1
+    elif SAle_drink == 'all':
+        li_pivas_drinkers.append("Санёк")
+        li_hard_drinkers.append("Санёк")
+        pivas_drinkers_count += 1
+        hard_drinkers_count += 1
+    elif SAle_drink == 'loh':
+        li_lohs.append("Санёк")
+        loh_count += 1
+
+    if el == 'y':
+        SAle_eat = input('Санёк кушал? (y/n): ')
+        if SAle_eat == 'y':
+            li_eaters.append("Санёк")
+            eaters_count += 1
+    else:
+        SAle_eat = 'n'
+
+    SAle_pivas_invest = int(input('Сколько Санёк вкинул на пивас?: '))
+    SAle_hard_invest = int(input('Сколько Санёк вкинул на крепкий алкоголь?: '))
+    # SAle_eat_invest = int(input('Сколько Санёк вкинул на еду?: '))
+    # SAle_total_invest = SAle_eat_invest + SAle_hard_invest + SAle_pivas_invest
+    characters_count += 1
+
+else:
+    SAle_eat = 'n'
+    SAle_pivas_invest = 0
+    SAle_hard_invest = 0
+    SAle_eat_invest = 0
+
+print(' ')
+
+if VRom == 'y':
+    VRom_drink = input('Что пил Роман Эдуардович? (pivas/hard/all/loh): ')
+    if VRom_drink == 'pivas':
+        li_pivas_drinkers.append("Роман Эдуардович")
+        pivas_drinkers_count += 1
+    elif VRom_drink == 'hard':
+        li_hard_drinkers.append("Роман Эдуардович")
+        hard_drinkers_count += 1
+    elif VRom_drink == 'all':
+        li_pivas_drinkers.append("Роман Эдуардович")
+        li_hard_drinkers.append("Роман Эдуардович")
+        pivas_drinkers_count += 1
+        hard_drinkers_count += 1
+    elif VRom_drink == 'loh':
+        li_lohs.append("Роман Эдуардович")
+        loh_count += 1
+
+    if el == 'y':
+        VRom_eat = input('Роман Эдуардович кушал? (y/n): ')
+        if VRom_eat == 'y':
+            li_eaters.append("Роман Эдуардович")
+            eaters_count += 1
+    else:
+        VRom_eat = 'n'
+
+    VRom_pivas_invest = int(input('Сколько Роман Эдуардович вкинул на пивас?: '))
+    VRom_hard_invest = int(input('Сколько Роман Эдуардович вкинул на крепкий алкоголь?: '))
+    # VRom_eat_invest = int(input('Сколько Роман Эдуардович вкинул на еду?: '))
+    # VRom_total_invest = VRom_eat_invest + VRom_hard_invest + VRom_pivas_invest
+    characters_count += 1
+
+else:
+    VRom_eat = 'n'
+    VRom_pivas_invest = 0
+    VRom_hard_invest = 0
+    VRom_eat_invest = 0
+
+print(' ')
+time.sleep(1)
+#Расчеты
+
+
+
+if el == 'y':
+    print('Разберемся с едой: ', end='\n')
+    time.sleep(1)
+    eat_price = int(input('Сколько стоила еда?: '))
+    eat_payer = input('Кто оплатил еду? (And/RomI/RomV/Sash/Dim/Tol): ')
+else:
+    eat_price = 0
+    eat_payer = 'Nan'
+
+print(' ')
+
+cassa = 0
+
+total_pivas_invest = BAnd_pivas_invest + GDim_pivas_invest + IRom_pivas_invest + PTol_pivas_invest + SAle_pivas_invest + VRom_pivas_invest
+total_hard_invest = BAnd_hard_invest + GDim_hard_invest + IRom_hard_invest + PTol_hard_invest + SAle_hard_invest + VRom_hard_invest
+
+time.sleep(1)
+
+print('В целом, погуляли не плохо: ','\n', 'Пропито было : ', total_pivas_invest + total_hard_invest, ' рублей','\n', 'Проедено: ', eat_price, ' рублей', end='\n')
+time.sleep(1)
+print(' ')
+print('Раскидываем монету: ')
+time.sleep(1)
+
+if hard_drinkers_count == 0:
+    hard_drinkers_count = 1
+
+if BAnd == 'y':
+    if 'Андрюха' not in li_pivas_drinkers and BAnd_pivas_invest != 0:
+        BAnd_pivas_debet = BAnd_pivas_invest * (-1)
+    elif 'Андрюха' in li_pivas_drinkers:
+        BAnd_pivas_debet = (total_pivas_invest / pivas_drinkers_count) - BAnd_pivas_invest
+    else:
+        BAnd_pivas_debet = 0
+    if 'Андрюха' not in li_hard_drinkers and BAnd_hard_invest != 0:
+        BAnd_hard_debet = BAnd_hard_invest * (-1)
+    elif 'Андрюха' in li_hard_drinkers:
+        BAnd_hard_debet = (total_hard_invest / hard_drinkers_count) - BAnd_hard_invest
+    else:
+        BAnd_hard_debet = 0
+    if eat_payer == 'And' and BAnd_eat == 'n':
+        BAnd_eat_debet = eat_price * (-1)
+    if BAnd_eat == 'n':
+        BAnd_eat_debet = 0
+    elif eat_payer == 'And':
+        BAnd_eat_debet = (eat_price - (eat_price / eaters_count)) * (-1)
+    else:
+        BAnd_eat_debet = eat_price / eaters_count
+    BAnd_debet = BAnd_pivas_debet + BAnd_hard_debet + BAnd_eat_debet
+    if BAnd_debet > 0:
+        print('Андрюха переводит в кассу ', BAnd_debet, ' рублей')
+        cassa += BAnd_debet
+    elif BAnd_debet < 0:
+        print('Касса переводит Андрюхе ', abs(BAnd_debet), ' рублей')
+        cassa -= abs(BAnd_debet)
+
+if GDim == 'y':
+    if 'Диман' not in li_pivas_drinkers and GDim_pivas_invest != 0:
+        GDim_pivas_debet = GDim_pivas_invest * (-1)
+    elif 'Диман' in li_pivas_drinkers:
+        GDim_pivas_debet = (total_pivas_invest / pivas_drinkers_count) - GDim_pivas_invest
+    else:
+        GDim_pivas_debet = 0
+    if 'Диман' not in li_hard_drinkers and GDim_hard_invest != 0:
+        GDim_hard_debet = GDim_hard_invest * (-1)
+    elif 'Диман' in li_hard_drinkers:
+        GDim_hard_debet = (total_hard_invest / hard_drinkers_count) - GDim_hard_invest
+    else:
+        GDim_hard_debet = 0
+    if eat_payer == 'Dim' and GDim_eat == 'n':
+        GDim_eat_debet = eat_price * (-1)
+    elif GDim_eat == 'n':
+        GDim_eat_debet = 0
+    elif eat_payer == 'Dim':
+        GDim_eat_debet = (eat_price - (eat_price / eaters_count)) * (-1)
+    else:
+        GDim_eat_debet = eat_price / eaters_count
+    GDim_debet = GDim_pivas_debet + GDim_hard_debet + GDim_eat_debet
+    if GDim_debet > 0:
+        print('Диман переводит в кассу ', GDim_debet, ' рублей')
+        cassa += GDim_debet
+    else:
+        print('Касса переводит Диману ', abs(GDim_debet), ' рублей')
+        cassa -= abs(GDim_debet)
+
+if IRom == 'y':
+    if 'Роман Анатольевич' not in li_pivas_drinkers and IRom_pivas_invest != 0:
+        IRom_pivas_debet = IRom_pivas_invest * (-1)
+    elif 'Роман Анатольевич' in li_pivas_drinkers:
+        IRom_pivas_debet = (total_pivas_invest / pivas_drinkers_count) - IRom_pivas_invest
+    else :
+        IRom_pivas_debet = 0
+    if 'Роман Анатольевич' not in li_hard_drinkers and IRom_hard_invest != 0:
+        IRom_hard_debet = IRom_hard_invest * (-1)
+    elif 'Роман Анатольевич' in li_hard_drinkers:
+        IRom_hard_debet = (total_hard_invest / hard_drinkers_count) - IRom_hard_invest
+    else:
+        IRom_hard_debet = 0
+    if eat_payer == 'RomI' and IRom_eat == 'n':
+        IRom_eat_debet = eat_price * (-1)
+    elif IRom_eat == 'n':
+        IRom_eat_debet = 0
+    elif eat_payer == 'RomI':
+        IRom_eat_debet = (eat_price - (eat_price / eaters_count)) * (-1)
+    else:
+        IRom_eat_debet = eat_price / eaters_count
+    IRom_debet = IRom_pivas_debet + IRom_hard_debet + IRom_eat_debet
+    if IRom_debet > 0:
+        print('Роман Анатольевич переводит в кассу ', IRom_debet, ' рублей')
+        cassa += IRom_debet
+    else:
+        print('Касса переводит Роману Анатольевичу ', abs(IRom_debet), ' рублей')
+        cassa -= abs(IRom_debet)
+
+if PTol == 'y':
+    if 'Толян' not in li_pivas_drinkers and PTol_pivas_invest != 0:
+        PTol_pivas_debet = PTol_pivas_invest * (-1)
+    elif 'Толян' in li_pivas_drinkers:
+        PTol_pivas_debet = (total_pivas_invest / pivas_drinkers_count) - PTol_pivas_invest
+    else:
+        PTol_pivas_debet = 0
+    if 'Толян' not in li_hard_drinkers and PTol_hard_invest != 0:
+        PTol_hard_debet = PTol_hard_invest * (-1)
+    elif 'Толян' in li_hard_drinkers:
+        PTol_hard_debet = (total_hard_invest / hard_drinkers_count) - PTol_hard_invest
+    else:
+        PTol_hard_debet = 0
+    if eat_payer == 'Tol' and PTol_eat == 'n':
+        PTol_eat_debet = eat_price * (-1)
+    elif  PTol_eat == 'n':
+        PTol_eat_debet = 0
+    elif eat_payer == 'Tol':
+        PTol_eat_debet = (eat_price - (eat_price / eaters_count)) * (-1)
+    else:
+        PTol_eat_debet = eat_price / eaters_count
+    PTol_debet = PTol_pivas_debet + PTol_hard_debet + PTol_eat_debet
+    if PTol_debet > 0:
+        print('Толян переводит в кассу ', PTol_debet, ' рублей')
+        cassa += PTol_debet
+    else:
+        print('Касса переводит Толяну ', abs(PTol_debet), ' рублей')
+        cassa -= abs(PTol_debet)
+
+if SAle == 'y':
+    if 'Санёк' not in li_pivas_drinkers and SAle_pivas_invest != 0:
+        SAle_pivas_debet = SAle_pivas_invest * (-1)
+    elif 'Санёк' in li_pivas_drinkers:
+        SAle_pivas_debet = (total_pivas_invest / pivas_drinkers_count) - SAle_pivas_invest
+    else:
+        SAle_pivas_debet = 0
+    if 'Санёк' not in li_hard_drinkers and SAle_hard_invest != 0:
+        SAle_hard_debet = SAle_hard_invest * (-1)
+    elif 'Санёк' in li_hard_drinkers:
+        SAle_hard_debet = (total_hard_invest / hard_drinkers_count) - SAle_hard_invest
+    else:
+        SAle_hard_debet = 0
+    if eat_payer == 'Sash' and SAle_eat == 'n':
+        SAle_eat_debet = eat_price * (-1)
+    elif SAle_eat == 'n':
+        SAle_eat_debet = 0
+    elif eat_payer == 'Sash':
+        SAle_eat_debet = (eat_price - (eat_price / eaters_count)) * (-1)
+    else:
+        SAle_eat_debet = eat_price / eaters_count
+    SAle_debet = SAle_pivas_debet + SAle_hard_debet + SAle_eat_debet
+    if SAle_debet > 0:
+        print('Санёк переводит в кассу ', SAle_debet, ' рублей')
+        cassa += SAle_debet
+    else:
+        print('Касса переводит Саньку ', abs(SAle_debet), ' рублей')
+        cassa -= abs(SAle_debet)
+
+if VRom == 'y':
+    if 'Роман Эдуардович' not in li_pivas_drinkers and VRom_pivas_invest != 0:
+        VRom_pivas_debet = VRom_pivas_invest * (-1)
+    elif 'Роман Эдуардович' in li_pivas_drinkers:
+        VRom_pivas_debet = (total_pivas_invest / pivas_drinkers_count) - VRom_pivas_invest
+    else:
+        VRom_pivas_debet = 0
+    if 'Роман Эдуардович' not in li_hard_drinkers and VRom_hard_invest != 0:
+        VRom_hard_debet = VRom_hard_invest * (-1)
+    elif 'Роман Эдуардович' in li_hard_drinkers:
+        VRom_hard_debet = (total_hard_invest / hard_drinkers_count) - VRom_hard_invest
+    else:
+        VRom_hard_debet = 0
+    if eat_payer == 'RomV' and VRom_eat == 'n':
+        VRom_eat_debet = eat_price * (-1)
+    elif VRom_eat == 'n':
+        VRom_eat_debet = 0
+    elif eat_payer == 'RomV':
+        VRom_eat_debet = (eat_price - (eat_price / eaters_count)) * (-1)
+    else:
+        VRom_eat_debet = eat_price / eaters_count
+    VRom_debet = VRom_pivas_debet + VRom_hard_debet + VRom_eat_debet
+    if VRom_debet > 0:
+        print('Роман Эдуардович переводит в кассу ', VRom_debet, ' рублей')
+        cassa += VRom_debet
+    else:
+        print('Касса переводит Роману Эдуардовичу ', abs(VRom_debet), ' рублей')
+        cassa -= abs(VRom_debet)
+
+if cassa == 0:
+    print('В кассе ', cassa, ' рублей. Касса сошлась, всё ровно.')
+elif 0 < cassa < 10 or (-10 < cassa < 0):
+    print('В кассе ', cassa, ' рублей. Допустимая погрешность, вызванная делением')
+else:
+    print('В кассе ', cassa, ' рублей. Погрешность значительная.\nВероятно, допущена ошибка в вычислениях, обратитесь к разработчику.')
+
+a = input('Для выхода из программы нажми "Enter"')
+if a != 'ssssss':
+    print('Удач')
+    time.sleep(2)
+    exit()
+
+
+
+
+
+
+
+
