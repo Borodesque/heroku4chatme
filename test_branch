@@ -1,0 +1,4 @@
+try:
+  print('Hello_World')
+except:
+  print('What? No')
